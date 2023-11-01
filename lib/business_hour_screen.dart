@@ -715,10 +715,17 @@ class BusineshourScreen extends StatelessWidget {
               child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     foregroundColor: blackColor,
+                    shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.r),
+                    ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    businessHourController.addBusinessHourModel();
+                  },
                   child: Row(
-                    mainAxisSize: MainAxisSize.min,
+                    // mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+
                     children: [
                       const Icon(Icons.add),
                       SizedBox(width: 10.w),
@@ -738,7 +745,9 @@ class BusineshourScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.r),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  businessHourController.updateProfile();
+                },
                 child: const Center(
                   child: Text("Update Profile"),
                 ),

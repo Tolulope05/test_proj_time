@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:get/get.dart';
 import 'package:test_proj_time/model/business_hour_model.dart';
 
@@ -65,8 +68,30 @@ class BusinessHourController extends GetxController {
 
   List<BusinessHourModel> get businessHourModel => _businessHourModel;
 
-  void addBusinessHourModel(BusinessHourModel businessHourModel) {
-    _businessHourModel.add(businessHourModel);
+  void addBusinessHourModel() {
+    //addBusinessHourModel(BusinessHourModel businessHourModel) {
+    // _businessHourModel.add(businessHourModel); can use this, but i want to add new business hour without having to edit the days, guest per hour, open hours, and close hours
+    _businessHourModel.add(BusinessHourModel(
+      closeHours: "20:00",
+      days: ["Monday", "Tuesday", "Thursday", "Friday"],
+      guestPerHour: "5",
+      openHours: "08:00",
+      timeslots: [
+        Timeslot(
+          scheduleName: "Morning",
+          slots: [
+            Slot(
+              startTime: "08:00",
+              endTime: "09:00",
+            ),
+            Slot(
+              startTime: "09:00",
+              endTime: "10:00",
+            ),
+          ],
+        )
+      ],
+    ));
     update();
   }
 
@@ -150,6 +175,16 @@ class BusinessHourController extends GetxController {
           ),
         );
     update();
+  }
+
+  void updateProfile() {
+    /**
+   * This is the data that will be sent to the API then cleared from the _businessHourModel
+   */
+    List<Map<String, dynamic>> dataJson =
+        _businessHourModel.map((BusinessHourModel e) => e.toJson()).toList();
+    String data = jsonEncode(dataJson);
+    log(data);
   }
 }
 
