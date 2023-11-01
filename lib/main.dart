@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
-import 'package:test_proj_time/app_colors.dart';
+import 'package:test_proj_time/utils/app_colors.dart';
 
 import 'business_hour_screen.dart';
 

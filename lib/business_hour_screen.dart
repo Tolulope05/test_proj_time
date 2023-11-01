@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import 'app_colors.dart';
-import 'business_hour_model.dart';
-import 'business_hour_vm.dart';
+import 'components/new_time_slot_bs.dart';
+import 'utils/app_colors.dart';
+import 'model/business_hour_model.dart';
+import 'view_models/business_hour_vm.dart';
 
 class BusineshourScreen extends StatelessWidget {
   const BusineshourScreen({super.key});
@@ -129,7 +130,6 @@ class BusineshourScreen extends StatelessWidget {
                           horizontal: 10.w, vertical: 10.h),
                       decoration: BoxDecoration(
                           border: Border.all(color: grey4),
-                          // color: grey2,
                           borderRadius: BorderRadius.circular(10.r)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -211,7 +211,14 @@ class BusineshourScreen extends StatelessWidget {
                                   style: OutlinedButton.styleFrom(
                                     foregroundColor: blackColor,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () async {
+                                    await showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) => NewTimeSlotBS(
+                                        businnessHr: businnessHr,
+                                      ),
+                                    );
+                                  },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [

@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:test_proj_time/business_hour_model.dart';
+import 'package:test_proj_time/model/business_hour_model.dart';
 
 class BusinessHourController extends GetxController {
   List<String> headers = [
