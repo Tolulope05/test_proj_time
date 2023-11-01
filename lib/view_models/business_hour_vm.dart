@@ -47,12 +47,16 @@ class BusinessHourController extends GetxController {
       openHours: "08:00",
       timeslots: [
         Timeslot(
-          scheduleName: "Breakfast",
+          scheduleName: "Morning",
           slots: [
             Slot(
               startTime: "08:00",
               endTime: "09:00",
-            )
+            ),
+            Slot(
+              startTime: "09:00",
+              endTime: "10:00",
+            ),
           ],
         )
       ],
@@ -90,6 +94,61 @@ class BusinessHourController extends GetxController {
   void changeCloseHours(
       BusinessHourModel businessHourModel, String closeHours) {
     businessHourModel.closeHours = closeHours;
+    update();
+  }
+
+  void changeScheduleName(BusinessHourModel businessHourModel, Timeslot shift,
+      String scheduleName, String? newScheduleName) {
+    businessHourModel.timeslots!
+        .firstWhere((element) => element.scheduleName == shift.scheduleName)
+        .scheduleName = newScheduleName;
+    update();
+  }
+
+  void changeScheduleSlotStartTime(BusinessHourModel businessHourModel,
+      Timeslot shift, Slot slot, String? startTime) {
+    businessHourModel.timeslots!
+        .firstWhere((element) => element.scheduleName == shift.scheduleName)
+        .slots!
+        .firstWhere((element) => element == slot)
+        .startTime = startTime;
+    update();
+  }
+
+  void changeScheduleSlotEndTime(BusinessHourModel businessHourModel,
+      Timeslot shift, Slot slot, String? endTime) {
+    businessHourModel.timeslots!
+        .firstWhere((element) => element.scheduleName == shift.scheduleName)
+        .slots!
+        .firstWhere((element) => element == slot)
+        .endTime = endTime;
+    update();
+  }
+
+  void addNewShift(BusinessHourModel businessHourModel) {
+    // businessHourModel.timeslots!.add(shift); can use this, but i want to add new shift without having to edit the start time and end time
+    businessHourModel.timeslots!.add(Timeslot(
+      scheduleName: 'New Shift',
+      slots: [
+        Slot(
+          startTime: "00:00",
+          endTime: "00:00",
+        ),
+      ],
+    ));
+    update();
+  }
+
+  void addNewTimeSlot(BusinessHourModel businessHourModel, Timeslot shift) {
+    businessHourModel.timeslots!
+        .firstWhere((element) => element.scheduleName == shift.scheduleName)
+        .slots!
+        .add(
+          Slot(
+            startTime: "00:00",
+            endTime: "00:00",
+          ),
+        );
     update();
   }
 }

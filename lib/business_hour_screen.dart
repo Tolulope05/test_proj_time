@@ -208,25 +208,30 @@ class BusineshourScreen extends StatelessWidget {
                                 ),
                               ),
                               OutlinedButton(
-                                  style: OutlinedButton.styleFrom(
-                                    foregroundColor: blackColor,
-                                  ),
-                                  onPressed: () async {
-                                    await showModalBottomSheet(
-                                      context: context,
-                                      builder: (context) => NewTimeSlotBS(
-                                        businnessHr: businnessHr,
-                                      ),
-                                    );
-                                  },
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      const Icon(Icons.add),
-                                      SizedBox(width: 5.w),
-                                      const Text("Add time slot"),
-                                    ],
-                                  )),
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: blackColor,
+                                ),
+                                onPressed: () async {
+                                  await showModalBottomSheet(
+                                    context: context,
+                                    isScrollControlled: true,
+                                    constraints: BoxConstraints.loose(
+                                      Size(1.sw, 0.9.sh),
+                                    ),
+                                    builder: (context) => NewTimeSlotBS(
+                                      businnessHr: businnessHr,
+                                    ),
+                                  );
+                                },
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    const Icon(Icons.add),
+                                    SizedBox(width: 5.w),
+                                    const Text("Add time slot"),
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
                           SizedBox(height: 10.h),
@@ -285,7 +290,7 @@ class BusineshourScreen extends StatelessWidget {
                                                           child: SizedBox(),
                                                         ),
                                                         Text(
-                                                          'Select Date',
+                                                          'Select Open Time',
                                                           style: TextStyle(
                                                             fontWeight:
                                                                 FontWeight.w700,
