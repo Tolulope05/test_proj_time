@@ -172,7 +172,6 @@ class NewTimeSlotBS extends StatelessWidget {
                                     businessHourController.changeScheduleName(
                                       businnessHr,
                                       shift,
-                                      shift.scheduleName!,
                                       value,
                                     );
                                   },

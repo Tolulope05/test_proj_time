@@ -44,49 +44,40 @@ class BusinessHourController extends GetxController {
 
   final List<BusinessHourModel> _businessHourModel = [
     BusinessHourModel(
-      closeHours: "20:00",
-      days: ["Monday", "Tuesday", "Thursday", "Friday"],
-      guestPerHour: "5",
-      openHours: "08:00",
+      closeHours: '',
+      days: [],
+      guestPerHour: '',
+      openHours: '',
       timeslots: [
         Timeslot(
-          scheduleName: "Morning",
+          scheduleName: "",
           slots: [
             Slot(
-              startTime: "08:00",
-              endTime: "09:00",
-            ),
-            Slot(
-              startTime: "09:00",
-              endTime: "10:00",
+              startTime: "",
+              endTime: "",
             ),
           ],
         )
       ],
-    )
+    ),
   ];
 
   List<BusinessHourModel> get businessHourModel => _businessHourModel;
 
   void addBusinessHourModel() {
-    //addBusinessHourModel(BusinessHourModel businessHourModel) {
-    // _businessHourModel.add(businessHourModel); can use this, but i want to add new business hour without having to edit the days, guest per hour, open hours, and close hours
+    // void addBusinessHourModel(BusinessHourModel businessHourModel) {
     _businessHourModel.add(BusinessHourModel(
-      closeHours: "20:00",
-      days: ["Monday", "Tuesday", "Thursday", "Friday"],
-      guestPerHour: "5",
-      openHours: "08:00",
+      closeHours: '',
+      days: [],
+      guestPerHour: '',
+      openHours: '',
       timeslots: [
         Timeslot(
-          scheduleName: "Morning",
+          scheduleName: "",
           slots: [
             Slot(
-              startTime: "08:00",
-              endTime: "09:00",
-            ),
-            Slot(
-              startTime: "09:00",
-              endTime: "10:00",
+              startTime: "",
+              endTime: "",
             ),
           ],
         )
@@ -123,9 +114,9 @@ class BusinessHourController extends GetxController {
   }
 
   void changeScheduleName(BusinessHourModel businessHourModel, Timeslot shift,
-      String scheduleName, String? newScheduleName) {
+      String? newScheduleName) {
     businessHourModel.timeslots!
-        .firstWhere((element) => element.scheduleName == shift.scheduleName)
+        .firstWhere((element) => element == shift)
         .scheduleName = newScheduleName;
     update();
   }
@@ -152,12 +143,21 @@ class BusinessHourController extends GetxController {
 
   void addNewShift(BusinessHourModel businessHourModel) {
     // businessHourModel.timeslots!.add(shift); can use this, but i want to add new shift without having to edit the start time and end time
+    // businessHourModel.timeslots!.add(Timeslot(
+    //   scheduleName: 'New Shift',
+    //   slots: [
+    //     Slot(
+    //       startTime: "00:00",
+    //       endTime: "00:00",
+    //     ),
+    //   ],
+    // ));
     businessHourModel.timeslots!.add(Timeslot(
-      scheduleName: 'New Shift',
+      scheduleName: '',
       slots: [
         Slot(
-          startTime: "00:00",
-          endTime: "00:00",
+          startTime: "",
+          endTime: "",
         ),
       ],
     ));

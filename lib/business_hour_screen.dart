@@ -118,8 +118,9 @@ class BusineshourScreen extends StatelessWidget {
             Divider(color: grey3, thickness: 1.w),
             SizedBox(height: 10.h),
             Expanded(
-              child: GetBuilder<BusinessHourController>(
-                  builder: (businessHourController) {
+              child: GetBuilder<BusinessHourController>(initState: (state) {
+                // fetch existing businessHours
+              }, builder: (businessHourController) {
                 return ListView.separated(
                   shrinkWrap: true,
                   itemBuilder: (context, branchIndex) {
@@ -262,7 +263,7 @@ class BusineshourScreen extends StatelessWidget {
                                       decoration: InputDecoration(
                                         contentPadding: EdgeInsets.symmetric(
                                             horizontal: 10.w, vertical: 5.h),
-                                        hintText: '10:30 am',
+                                        // hintText: '10:30 am',
                                         hintStyle: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 15.sp,
