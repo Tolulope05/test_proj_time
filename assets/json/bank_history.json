@@ -1,0 +1,162 @@
+{
+  "account_number": "1234567890",
+  "account_holder": "John Doe",
+  "transactions": [
+    {
+      "transaction_id": "TXN123456",
+      "date": "2023-11-01",
+      "description": "Grocery Store",
+      "amount": -50.0,
+      "balance": 1500.0,
+      "category": "Expense",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN124456",
+      "date": "2023-11-01",
+      "description": "Grocery Store",
+      "amount": -50.0,
+      "balance": 1500.0,
+      "category": "Expense",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN124456",
+      "date": "2023-12-01",
+      "description": "Grocery Store",
+      "amount": -50.0,
+      "balance": 1500.0,
+      "category": "Expense",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN143456",
+      "date": "2024-11-01",
+      "description": "Grocery Store",
+      "amount": -50.0,
+      "balance": 1500.0,
+      "category": "Expense",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN124456",
+      "date": "2022-11-01",
+      "description": "Book Store",
+      "amount": -60.0,
+      "balance": 1500.0,
+      "category": "Expense",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN123457",
+      "date": "2023-11-02",
+      "description": "Salary Deposit",
+      "amount": 2500.0,
+      "balance": 4000.0,
+      "category": "Income",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN123458",
+      "date": "2023-11-03",
+      "description": "ATM Withdrawal",
+      "amount": -100.0,
+      "balance": 3900.0,
+      "category": "Cash Withdrawal",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN123459",
+      "date": "2023-11-04",
+      "description": "Grocery Store",
+      "amount": -50.0,
+      "balance": 3850.0,
+      "category": "Expense",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN123460",
+      "date": "2023-11-05",
+      "description": "Grocery Store",
+      "amount": -50.0,
+      "balance": 3800.0,
+      "category": "Expense",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN123461",
+      "date": "2023-11-06",
+      "description": "Grocery Store",
+      "amount": -50.0,
+      "balance": 3750.0,
+      "category": "Expense",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN123462",
+      "date": "2023-11-07",
+      "description": "Grocery Store",
+      "amount": -50.0,
+      "balance": 3700.0,
+      "category": "Expense",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    },
+    {
+      "transaction_id": "TXN123463",
+      "date": "2023-11-08",
+      "description": "Grocery Store",
+      "amount": -50.0,
+      "balance": 3650.0,
+      "category": "Expense",
+      "location": {
+        "city": "Cityville",
+        "state": "State",
+        "country": "Country"
+      }
+    }
+  ]
+}
