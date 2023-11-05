@@ -1,10 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/services.dart';
-import 'package:collection/collection.dart';
-
 import 'package:get/get.dart';
-
 import '../model/trans_history_model.dart';
 
 class BankTransactionsHistoryVm extends GetxController {
@@ -48,35 +45,12 @@ class BankTransactionsHistoryVm extends GetxController {
       }
       return map;
     });
-    sortedTransactions
-        .sort((a, b) => a.keys.first.compareTo(b.keys.first)); // Game changer
+    sortedTransactions.sort((a, b) {
+      DateTime aDate = DateTime.parse(a.keys.first);
+      DateTime bDate = DateTime.parse(b.keys.first);
+      return bDate.compareTo(aDate);
+      // return a.keys.first.compareTo(b.keys.first);
+    }); // Game changer
     return sortedTransactions;
   }
 }
-
-
-/**
- * 
- * // if (_transactionHistory != null) {
-    //   sortedTransactions = _transactionHistory!.transactions!
-    //       .fold<Map<String, List<Transaction>>>({}, (map, transaction) {
-    //     if (map.containsKey(transaction.category)) {
-    //       map[transaction.category!]!.add(transaction);
-    //     } else {
-    //       map[transaction.category!] = [transaction];
-    //     }
-    //     return map;
-    //   });
-    // }
-    // return sortedTransactions;
-
-
-      Future<List<Transaction>> sortTransactionsByDate() async {
-    List<Transaction> sortedTransactions = [];
-    if (_transactionHistory != null) {
-      sortedTransactions = _transactionHistory!.transactions!;
-      sortedTransactions.sort((a, b) => a.date!.compareTo(b.date!));
-    }
-    return sortedTransactions;
-  }
- */
